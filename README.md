@@ -6,3 +6,13 @@ Implemented so far:
  * Solar
 
 Tested with libnova v 0.15.0
+
+## Install
+
+You need libnova installed, with libs and headers where gcc can find them.
+
+    go get github.com/pebbe/libnova
+
+## Docs
+
+ * [package help](http://godoc.org/github.com/pebbe/libnova)
