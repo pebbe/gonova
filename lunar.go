@@ -20,7 +20,7 @@ func GetLunarSdiam(JD Julian) float64 {
 // int LIBNOVA_EXPORT ln_get_lunar_rst (double JD, struct ln_lnlat_posn * observer, struct ln_rst_time * rst);
 
 // Calculate the time of rise, set and transit for the Moon.
-func GetLunarRST(JD Julian, lat, long float64) (rise, set, transit Julian, err error) {
+func GetLunarRST(JD Julian, long, lat float64) (rise, set, transit Julian, err error) {
 	var rst C.struct_ln_rst_time
 	observer := C.struct_ln_lnlat_posn{lng: C.double(long), lat: C.double(lat)}
 	e := C.ln_get_lunar_rst(C.double(JD), &observer, &rst)
@@ -86,7 +86,7 @@ func GetLunarEquCoords(JD Julian) (ra, dec float64) {
 // Accuracy is better than 10 arcsecs in longitude and 4 arcsecs in latitude.
 // precision: The truncation level of the series in radians for longitude
 // and latitude and in km for distance. (Valid range 0 - 0.01, 0 being highest accuracy)
-func GetLunarEclCoords(JD Julian, precision float64) (lng, lat float64) {
+func GetLunarEclCoords(JD Julian, precision float64) (long, lat float64) {
     var r C.struct_ln_lnlat_posn
 	if precision < 0 {
 		precision = 0
@@ -95,7 +95,7 @@ func GetLunarEclCoords(JD Julian, precision float64) (lng, lat float64) {
 		precision = 0.01
 	}
 	C.ln_get_lunar_ecl_coords(C.double(JD), &r, C.double(precision))
-	lng, lat = float64(r.lng), float64(r.lat)
+	long, lat = float64(r.lng), float64(r.lat)
 	return
 }
 
