@@ -7,7 +7,7 @@ Implemented so far:
 
  Julian date  (to/from time.Time)
  Lunar
- Solar (partial)
+ Solar
 
 Tested with libnova v 0.15.0
 */
