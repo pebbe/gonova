@@ -10,6 +10,8 @@ Implemented so far:
 
 Tested with libnova v 0.15.0
 
+Keywords: astronomy, astrometry, celestial mechanics, sun, moon, planets
+
 ## Install
 
 You need libnova installed, with libs and headers where gcc can find them.
