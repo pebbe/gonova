@@ -1,5 +1,8 @@
 A wrapper for [libnova](http://libnova.sourceforge.net/) -- Celestial Mechanics, Astrometry and Astrodynamics Library.
 
+The library is not very accurate. If you want something more precise,
+try [novas](https://github.com/pebbe/novas)
+
 Implemented so far:
  * Julian date  (to/from time.Time)
  * Lunar
